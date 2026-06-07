@@ -1,0 +1,494 @@
+/* ======================================
+   TV BRASILEIRA ANOS 80 SIMULATOR
+   PARTE 2 - CSS
+====================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#1a1a1a;
+    color:white;
+    font-family:Arial, sans-serif;
+    text-align:center;
+    min-height:100vh;
+    padding:20px;
+}
+
+.room{
+    max-width:1400px;
+    margin:auto;
+}
+
+h1{
+    margin-bottom:20px;
+    color:gold;
+    text-shadow:0 0 10px gold;
+}
+
+/* ==========================
+   TV CRT
+========================== */
+
+.tv{
+    position:relative;
+    width:950px;
+    height:560px;
+    margin:auto;
+
+    background:
+    linear-gradient(
+        90deg,
+        #4b2d13,
+        #7a4a1f,
+        #5b3414
+    );
+
+    border:12px solid #2f1a08;
+
+    border-radius:25px;
+
+    box-shadow:
+    0 0 50px black,
+    inset 0 0 20px rgba(255,255,255,.1);
+}
+
+/* ==========================
+   ANTENA
+========================== */
+
+.antenna{
+    position:absolute;
+    top:-110px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.rod{
+    width:5px;
+    height:120px;
+    background:silver;
+    position:absolute;
+}
+
+.left{
+    transform:rotate(-30deg);
+}
+
+.right{
+    transform:rotate(30deg);
+}
+
+/* ==========================
+   TELA CRT
+========================== */
+
+.screen-frame{
+    position:absolute;
+    left:30px;
+    top:30px;
+}
+
+.screen{
+    position:relative;
+
+    width:680px;
+    height:450px;
+
+    background:black;
+
+    border:10px solid #111;
+
+    border-radius:40px;
+
+    overflow:hidden;
+
+    box-shadow:
+    inset 0 0 40px #000,
+    0 0 30px rgba(0,255,0,.2);
+}
+
+/* Curvatura CRT */
+
+.screen::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(
+        ellipse at center,
+        transparent 55%,
+        rgba(0,0,0,.45)
+    );
+
+    pointer-events:none;
+}
+
+/* Reflexo */
+
+.screen::after{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120px;
+
+    width:180px;
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.08),
+        transparent
+    );
+
+    transform:skewX(-15deg);
+
+    pointer-events:none;
+}
+
+/* ==========================
+   DISPLAY
+========================== */
+
+#display{
+    width:100%;
+    height:100%;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    color:#00ff99;
+
+    text-shadow:
+    0 0 5px #00ff99,
+    0 0 10px #00ff99;
+
+    padding:25px;
+
+    white-space:pre-line;
+
+    position:relative;
+    z-index:2;
+}
+
+/* ==========================
+   SCANLINES
+========================== */
+
+.scanlines{
+    position:absolute;
+    inset:0;
+
+    background:
+    repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,.04) 0px,
+        rgba(255,255,255,.04) 1px,
+        transparent 2px,
+        transparent 4px
+    );
+
+    pointer-events:none;
+
+    z-index:3;
+}
+
+/* ==========================
+   LOGO
+========================== */
+
+.channel-logo{
+    font-size:40px;
+    font-weight:bold;
+    margin-bottom:20px;
+
+    color:white;
+
+    text-shadow:
+    0 0 10px white,
+    0 0 20px white;
+}
+
+/* ==========================
+   PAINEL LATERAL
+========================== */
+
+.side-panel{
+    position:absolute;
+    right:25px;
+    top:25px;
+
+    width:180px;
+    height:470px;
+}
+
+/* ==========================
+   ALTO FALANTE
+========================== */
+
+.speaker{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:10px;
+
+    margin-bottom:25px;
+}
+
+.speaker-hole{
+    width:22px;
+    height:22px;
+
+    background:#111;
+
+    border-radius:50%;
+
+    box-shadow:
+    inset 0 0 5px black;
+}
+
+/* ==========================
+   BOTÕES TV
+========================== */
+
+.controls-tv{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.controls-tv button{
+    padding:12px;
+
+    border:none;
+
+    background:#555;
+
+    color:white;
+
+    border-radius:8px;
+
+    cursor:pointer;
+}
+
+.controls-tv button:hover{
+    background:#777;
+}
+
+/* ==========================
+   PAINEL INFERIOR
+========================== */
+
+.info-panel{
+    margin-top:20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+    font-size:20px;
+}
+
+/* ==========================
+   VHS
+========================== */
+
+.vhs-panel{
+    margin-top:25px;
+}
+
+.vhs-panel button{
+    margin:5px;
+    padding:12px 18px;
+
+    border:none;
+
+    background:#2f2f2f;
+
+    color:white;
+
+    border-radius:8px;
+
+    cursor:pointer;
+}
+
+.vhs-panel button:hover{
+    background:#555;
+}
+
+/* ==========================
+   CONTROLE REMOTO
+========================== */
+
+.remote{
+
+    width:320px;
+
+    margin:30px auto;
+
+    background:#3a3a3a;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    box-shadow:
+    0 0 20px black;
+}
+
+.remote-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:8px;
+
+    margin-bottom:15px;
+}
+
+.remote button{
+
+    padding:15px;
+
+    border:none;
+
+    background:#666;
+
+    color:white;
+
+    font-size:18px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+}
+
+.remote button:hover{
+    background:#888;
+}
+
+.remote-extra{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+}
+
+/* ==========================
+   CHUVISCO
+========================== */
+
+.static{
+
+    animation:
+    flicker .08s infinite;
+
+    background:
+    repeating-linear-gradient(
+        0deg,
+        #000,
+        #444 2px,
+        #999 4px,
+        #000 6px
+    );
+}
+
+@keyframes flicker{
+
+    0%{
+        opacity:.95;
+    }
+
+    50%{
+        opacity:.75;
+    }
+
+    100%{
+        opacity:1;
+    }
+}
+
+/* ==========================
+   PISCADA CRT
+========================== */
+
+@keyframes crtBlink{
+
+    0%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:.93;
+    }
+
+    100%{
+        opacity:1;
+    }
+}
+
+.screen{
+    animation:
+    crtBlink .15s infinite;
+}
+
+/* ==========================
+   RELÓGIO
+========================== */
+
+.clock,
+.date,
+.channel-info,
+.vhs-counter{
+
+    background:#111;
+
+    padding:10px 15px;
+
+    border-radius:10px;
+
+    box-shadow:
+    0 0 10px rgba(0,255,0,.25);
+}
+
+/* ==========================
+   RESPONSIVO
+========================== */
+
+@media(max-width:1100px){
+
+    .tv{
+        width:95%;
+        height:auto;
+        padding-bottom:20px;
+    }
+
+    .screen{
+        width:95%;
+        height:350px;
+    }
+
+    .side-panel{
+        display:none;
+    }
+}
