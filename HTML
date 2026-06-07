@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TV Brasileira Anos 80 Simulator</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="room">
+
+    <h1>📺 TV Brasileira Anos 80 Simulator</h1>
+
+    <div class="tv">
+
+        <!-- Antena -->
+        <div class="antenna">
+            <div class="rod left"></div>
+            <div class="rod right"></div>
+        </div>
+
+        <!-- Tela CRT -->
+        <div class="screen-frame">
+
+            <div class="screen">
+
+                <div class="scanlines"></div>
+
+                <div id="display">
+
+                    <div class="channel-logo">
+                        SBT
+                    </div>
+
+                    <div id="program-content">
+
+                        CARREGANDO...
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Painel lateral -->
+        <div class="side-panel">
+
+            <div class="speaker">
+                <div class="speaker-hole"></div>
+                <div class="speaker-hole"></div>
+                <div class="speaker-hole"></div>
+                <div class="speaker-hole"></div>
+                <div class="speaker-hole"></div>
+                <div class="speaker-hole"></div>
+                <div class="speaker-hole"></div>
+                <div class="speaker-hole"></div>
+                <div class="speaker-hole"></div>
+            </div>
+
+            <div class="controls-tv">
+
+                <button id="powerBtn">
+                    POWER
+                </button>
+
+                <button id="volumeBtn">
+                    VOL
+                </button>
+
+                <button id="channelBtn">
+                    CH
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Painel Informações -->
+
+    <div class="info-panel">
+
+        <div class="clock">
+            🕒 <span id="clock">00:00:00</span>
+        </div>
+
+        <div class="date">
+            📅 15/07/1988
+        </div>
+
+        <div class="vhs-counter">
+            📼 <span id="vhsCounter">00:00:00</span>
+        </div>
+
+        <div class="channel-info">
+            Canal: <span id="channelNumber">1</span>
+        </div>
+
+    </div>
+
+    <!-- VHS -->
+
+    <div class="vhs-panel">
+
+        <h2>📼 VHS</h2>
+
+        <button id="rewBtn">
+            ⏪ Rebobinar
+        </button>
+
+        <button id="playBtn">
+            ▶ Reproduzir
+        </button>
+
+        <button id="pauseBtn">
+            ⏸ Pausa
+        </button>
+
+        <button id="ffBtn">
+            ⏩ Avançar
+        </button>
+
+    </div>
+
+    <!-- Controle Remoto -->
+
+    <div class="remote">
+
+        <h2>🎛 Controle Remoto</h2>
+
+        <div class="remote-grid">
+
+            <button onclick="changeChannel(1)">1</button>
+            <button onclick="changeChannel(2)">2</button>
+            <button onclick="changeChannel(3)">3</button>
+
+            <button onclick="changeChannel(4)">4</button>
+            <button onclick="changeChannel(5)">5</button>
+            <button onclick="changeChannel(6)">6</button>
+
+            <button onclick="changeChannel(7)">7</button>
+            <button onclick="changeChannel(8)">8</button>
+            <button onclick="changeChannel(9)">9</button>
+
+        </div>
+
+        <div class="remote-extra">
+
+            <button id="prevChannel">
+                ◀ Canal
+            </button>
+
+            <button id="nextChannel">
+                Canal ▶
+            </button>
+
+            <button id="vhsMode">
+                📼 VHS
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
